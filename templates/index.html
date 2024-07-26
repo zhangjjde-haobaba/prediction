@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Prediction</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h2{
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        form{
+            height: 10rem;
+            width: 15rem;
+            border: 1px solid black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+        input{
+            margin: 2rem;
+
+        }
+        input:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Predictive Model Interface</h2>
+    <form action="{{ url_for('predict') }}" method="Post" enctype="multipart/form-data">
+        <!-- 这里添加输入字段 -->
+        <input type="file" name="file" placeholder="Upload data">
+        <button type="submit">Predict</button>
+    </form>
+{#    {% if prediction %}#}
+{#        <h3>Prediction Result: {{ prediction }}</h3>#}
+{#    {% endif %}#}
+</body>
+</html>
